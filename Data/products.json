@@ -1,12 +1,12 @@
 [
-    
     {
         "id": 1,
         "name": "Classic White T-Shirt",
         "category": "Clothing",
         "brand": "StyleCo",
         "price": 499,
-        "image": "https://m.media-amazon.com/images/I/71xYN-j2a+L._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71xYN-j2a+L._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "A timeless Classic White T-Shirt by StyleCo, crafted from soft, breathable cotton for all-day comfort. Perfect for casual outings or layering with your favorite jacket."
     },
     {
         "id": 2,
@@ -14,7 +14,8 @@
         "category": "Clothing",
         "brand": "DenimPro",
         "price": 1199,
-        "image": "https://m.media-amazon.com/images/I/71OBVZ-69WL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71OBVZ-69WL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Elevate your wardrobe with these Blue Denim Jeans from DenimPro. Designed with a slim fit and durable fabric, they offer style and comfort for any occasion."
     },
     {
         "id": 3,
@@ -22,7 +23,8 @@
         "category": "Clothing",
         "brand": "UrbanWear",
         "price": 899,
-        "image": "https://m.media-amazon.com/images/I/31c7bsjRNPL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/31c7bsjRNPL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Stay cozy with this Black Hoodie by UrbanWear. Featuring a soft fleece lining and a kangaroo pocket, it's ideal for chilly days and casual street style."
     },
     {
         "id": 4,
@@ -30,7 +32,8 @@
         "category": "Clothing",
         "brand": "StyleCo",
         "price": 599,
-        "image": "https://m.media-amazon.com/images/I/61O5YPmdDxL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61O5YPmdDxL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "These Casual Shorts from StyleCo offer a relaxed fit and lightweight fabric, perfect for summer adventures or lounging at home."
     },
     {
         "id": 5,
@@ -38,7 +41,8 @@
         "category": "Clothing",
         "brand": "ActiveGear",
         "price": 1499,
-        "image": "https://m.media-amazon.com/images/I/51hXm8dIzAL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51hXm8dIzAL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Gear up with this Sports Jacket by ActiveGear. Water-resistant and breathable, it’s designed for outdoor workouts and active lifestyles."
     },
     {
         "id": 6,
@@ -46,7 +50,8 @@
         "category": "Clothing",
         "brand": "FormStyle",
         "price": 799,
-        "image": "https://m.media-amazon.com/images/I/71VrpRdG7RL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71VrpRdG7RL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "This Formal Shirt by FormStyle combines crisp design with a tailored fit, making it a must-have for professional settings or formal events."
     },
     {
         "id": 7,
@@ -54,7 +59,8 @@
         "category": "Clothing",
         "brand": "Femina",
         "price": 1299,
-        "image": "https://m.media-amazon.com/images/I/61vlEZn-+dL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61vlEZn-+dL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Embrace warm days with this Summer Dress from Femina. Its flowy fabric and vibrant print make it perfect for picnics or beach outings."
     },
     {
         "id": 8,
@@ -62,7 +68,8 @@
         "category": "Clothing",
         "brand": "ActiveGear",
         "price": 699,
-        "image": "https://m.media-amazon.com/images/I/618IpQhQLzL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/618IpQhQLzL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "These Jogger Pants by ActiveGear offer a comfortable fit with stretchable fabric, ideal for workouts, casual wear, or lounging."
     },
     {
         "id": 9,
@@ -70,7 +77,8 @@
         "category": "Clothing",
         "brand": "UrbanWear",
         "price": 899,
-        "image": "https://m.media-amazon.com/images/I/71J66iD28pL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71J66iD28pL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Stay warm and stylish with this Sweatshirt by UrbanWear. Its soft fabric and relaxed fit make it a go-to for cozy evenings."
     },
     {
         "id": 10,
@@ -78,17 +86,17 @@
         "category": "Clothing",
         "brand": "Femina",
         "price": 799,
-        "image": "https://m.media-amazon.com/images/I/61AGSN8Qd5L._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61AGSN8Qd5L._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Add flair to your wardrobe with this Printed Skirt by Femina. Its vibrant pattern and comfortable fit are perfect for casual or semi-formal looks."
     },
-
-    
     {
         "id": 11,
         "name": "Leather Wallet",
         "category": "Accessories",
         "brand": "LeatherWorks",
         "price": 499,
-        "image": "https://m.media-amazon.com/images/I/81rulhFGhxL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/81rulhFGhxL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "This Leather Wallet by LeatherWorks combines sleek design with practicality, featuring multiple compartments for cards and cash."
     },
     {
         "id": 12,
@@ -96,7 +104,8 @@
         "category": "Accessories",
         "brand": "TimeZone",
         "price": 1499,
-        "image": "https://m.media-amazon.com/images/I/81CwsCvUWqL._AC_SR360,240_CB1169409_QL70_.jpg"
+        "image": "https://m.media-amazon.com/images/I/81CwsCvUWqL._AC_SR360,240_CB1169409_QL70_.jpg",
+        "description": "Timeless elegance with this Analog Watch from TimeZone. Its sleek design and durable strap make it a versatile accessory for any occasion."
     },
     {
         "id": 13,
@@ -104,7 +113,8 @@
         "category": "Accessories",
         "brand": "ShadeUp",
         "price": 799,
-        "image": "https://m.media-amazon.com/images/I/51gC4waUH0L._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51gC4waUH0L._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Protect your eyes in style with these Sunglasses by ShadeUp. UV-protected lenses and a trendy frame make them perfect for sunny days."
     },
     {
         "id": 14,
@@ -112,7 +122,8 @@
         "category": "Accessories",
         "brand": "LeatherWorks",
         "price": 599,
-        "image": "https://m.media-amazon.com/images/I/81jv56HsVOL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/81jv56HsVOL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "This Leather Belt by LeatherWorks adds a polished touch to any outfit. Crafted from genuine leather with a sturdy buckle for lasting use."
     },
     {
         "id": 15,
@@ -120,7 +131,8 @@
         "category": "Accessories",
         "brand": "BagPro",
         "price": 1299,
-        "image": "https://m.media-amazon.com/images/I/51mos5Rz5KL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51mos5Rz5KL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Carry your essentials with this Canvas Backpack by BagPro. Spacious, durable, and stylish, it’s perfect for school, work, or travel."
     },
     {
         "id": 16,
@@ -128,7 +140,8 @@
         "category": "Accessories",
         "brand": "CapZone",
         "price": 399,
-        "image": "https://m.media-amazon.com/images/I/51Ha9KMF1SL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51Ha9KMF1SL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Top off your look with this Baseball Cap from CapZone. Adjustable and comfortable, it’s great for casual outings or outdoor activities."
     },
     {
         "id": 17,
@@ -136,7 +149,8 @@
         "category": "Accessories",
         "brand": "StyleCo",
         "price": 299,
-        "image": "https://m.media-amazon.com/images/I/81CTW0fgawL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/81CTW0fgawL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Add warmth and style with this Scarf by StyleCo. Its soft fabric and elegant design make it a versatile accessory for any season."
     },
     {
         "id": 18,
@@ -144,7 +158,8 @@
         "category": "Accessories",
         "brand": "Jewels",
         "price": 999,
-        "image": "https://m.media-amazon.com/images/I/51tRDYCsmDL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51tRDYCsmDL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Elevate your style with this Silver Bracelet by Jewels. Its sleek design adds a touch of sophistication to any outfit."
     },
     {
         "id": 19,
@@ -152,7 +167,8 @@
         "category": "Accessories",
         "brand": "BagPro",
         "price": 1599,
-        "image": "https://m.media-amazon.com/images/I/61-wXlQa5kL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61-wXlQa5kL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "This Handbag by BagPro combines fashion and function with spacious compartments and a chic design, perfect for daily use."
     },
     {
         "id": 20,
@@ -160,17 +176,17 @@
         "category": "Accessories",
         "brand": "LeatherWorks",
         "price": 199,
-        "image": "https://m.media-amazon.com/images/I/71rDlVSv8ML._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71rDlVSv8ML._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Keep your keys organized with this Keychain Set by LeatherWorks. Crafted from durable materials, it’s both practical and stylish."
     },
-
-   
     {
         "id": 21,
         "name": "Smartphone",
         "category": "Electronics",
         "brand": "TechPro",
         "price": 15999,
-        "image": "https://m.media-amazon.com/images/I/61D3EdXKG5L._SX679_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61D3EdXKG5L._SX679_.jpg",
+        "description": "Stay connected with this Smartphone by TechPro. Featuring a powerful processor, stunning display, and long-lasting battery for all your needs."
     },
     {
         "id": 22,
@@ -178,7 +194,8 @@
         "category": "Electronics",
         "brand": "SoundX",
         "price": 2999,
-        "image": "https://m.media-amazon.com/images/I/41lArSiD5hL._SX679_.jpg"
+        "image": "https://m.media-amazon.com/images/I/41lArSiD5hL._SX679_.jpg",
+        "description": "Immerse yourself in music with these Bluetooth Headphones by SoundX. Enjoy crystal-clear sound and up to 20 hours of battery life."
     },
     {
         "id": 23,
@@ -186,7 +203,8 @@
         "category": "Electronics",
         "brand": "CompTech",
         "price": 49999,
-        "image": "https://m.media-amazon.com/images/I/71RDgtHsREL._SX679_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71RDgtHsREL._SX679_.jpg",
+        "description": "Boost productivity with this Laptop by CompTech. Equipped with a fast processor, ample storage, and a sleek design for work or play."
     },
     {
         "id": 24,
@@ -194,7 +212,8 @@
         "category": "Electronics",
         "brand": "TechPro",
         "price": 799,
-        "image": "https://m.media-amazon.com/images/I/31Hn3R2Vv5L._SX300_SY300_QL70_FMwebp_.jpg"
+        "image": "https://m.media-amazon.com/images/I/31Hn3R2Vv5L._SX300_SY300_QL70_FMwebp_.jpg",
+        "description": "Enhance your workflow with this Wireless Mouse by TechPro. Ergonomic design and precise control make it ideal for work or gaming."
     },
     {
         "id": 25,
@@ -202,7 +221,8 @@
         "category": "Electronics",
         "brand": "TimeZone",
         "price": 5999,
-        "image": "https://m.media-amazon.com/images/I/41Y6lb1N2CL._SX300_SY300_QL70_FMwebp_.jpg"
+        "image": "https://m.media-amazon.com/images/I/41Y6lb1N2CL._SX300_SY300_QL70_FMwebp_.jpg",
+        "description": "Track your fitness and stay connected with this Smartwatch by TimeZone. Features heart rate monitoring and smartphone notifications."
     },
     {
         "id": 26,
@@ -210,7 +230,8 @@
         "category": "Electronics",
         "brand": "SoundX",
         "price": 1999,
-        "image": "https://m.media-amazon.com/images/I/81Dl7qzd40L._AC_UY327_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/81Dl7qzd40L._AC_UY327_FMwebp_QL65_.jpg",
+        "description": "Take the party anywhere with this Bluetooth Speaker by SoundX. Compact, powerful, and water-resistant for outdoor adventures."
     },
     {
         "id": 27,
@@ -218,7 +239,8 @@
         "category": "Electronics",
         "brand": "CompTech",
         "price": 14999,
-        "image": "https://m.media-amazon.com/images/I/61afkty1foL._AC_UY327_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61afkty1foL._AC_UY327_FMwebp_QL65_.jpg",
+        "description": "This Tablet by CompTech offers a vibrant display and powerful performance, perfect for streaming, gaming, or productivity on the go."
     },
     {
         "id": 28,
@@ -226,7 +248,8 @@
         "category": "Electronics",
         "brand": "DataStore",
         "price": 499,
-        "image": "https://m.media-amazon.com/images/I/51uBDIyAZlL._AC_UY327_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51uBDIyAZlL._AC_UY327_FMwebp_QL65_.jpg",
+        "description": "Store and transfer files with ease using this USB Flash Drive by DataStore. Compact design with high-speed data transfer."
     },
     {
         "id": 29,
@@ -234,7 +257,8 @@
         "category": "Electronics",
         "brand": "PowerMax",
         "price": 1299,
-        "image": "https://m.media-amazon.com/images/I/717P0FVCmjL._AC_UY327_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/717P0FVCmjL._AC_UY327_FMwebp_QL65_.jpg",
+        "description": "Keep your devices charged with this Power Bank by PowerMax. High-capacity and portable, perfect for travel or daily use."
     },
     {
         "id": 30,
@@ -242,17 +266,17 @@
         "category": "Electronics",
         "brand": "CamPro",
         "price": 8999,
-        "image": "https://m.media-amazon.com/images/I/51VGyKUgiaL._AC_UY327_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/51VGyKUgiaL._AC_UY327_FMwebp_QL65_.jpg",
+        "description": "Capture every adventure with this Action Camera by CamPro. Waterproof and durable with 4K video recording for stunning footage."
     },
-
-   
     {
         "id": 31,
         "name": "Decorative Vase",
         "category": "Home & Living",
         "brand": "HomeDecor",
         "price": 799,
-        "image": "https://m.media-amazon.com/images/I/61Lt6ZEiQUL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61Lt6ZEiQUL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Add elegance to your space with this Decorative Vase by HomeDecor. Perfect for flowers or as a standalone accent piece."
     },
     {
         "id": 32,
@@ -260,7 +284,8 @@
         "category": "Home & Living",
         "brand": "HomeDecor",
         "price": 999,
-        "image": "https://m.media-amazon.com/images/I/71F8TPyS4+L._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71F8TPyS4+L._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "This Wall Clock by HomeDecor combines style and function with a modern design, perfect for any living room or office."
     },
     {
         "id": 33,
@@ -268,7 +293,8 @@
         "category": "Home & Living",
         "brand": "LightUp",
         "price": 1499,
-        "image": "https://m.media-amazon.com/images/I/61ezlu8qUpL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61ezlu8qUpL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Brighten your workspace with this LED Table Lamp by LightUp. Adjustable brightness and sleek design for modern homes."
     },
     {
         "id": 34,
@@ -276,7 +302,8 @@
         "category": "Home & Living",
         "brand": "ComfyHome",
         "price": 1299,
-        "image": "https://m.media-amazon.com/images/I/61VB66+prEL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61VB66+prEL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Add comfort and style with this Cushion Set by ComfyHome. Soft, durable, and perfect for refreshing your sofa or bed."
     },
     {
         "id": 35,
@@ -284,7 +311,8 @@
         "category": "Home & Living",
         "brand": "OrganizePro",
         "price": 699,
-        "image": "https://m.media-amazon.com/images/I/61Zge25u4TS._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/61Zge25u4TS._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Keep your kitchen tidy with this Kitchen Organizer by OrganizePro. Space-saving design for utensils, spices, and more."
     },
     {
         "id": 36,
@@ -292,7 +320,8 @@
         "category": "Home & Living",
         "brand": "Artify",
         "price": 1999,
-        "image": "https://m.media-amazon.com/images/I/71y-YvexhUL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71y-YvexhUL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Transform your space with this Wall Art by Artify. Vibrant and modern, it’s perfect for adding personality to any room."
     },
     {
         "id": 37,
@@ -300,7 +329,8 @@
         "category": "Home & Living",
         "brand": "HomeDecor",
         "price": 599,
-        "image": "https://m.media-amazon.com/images/I/81TDUF2Uc+L._SX679_.jpg"
+        "image": "https://m.media-amazon.com/images/I/81TDUF2Uc+L._SX679_.jpg",
+        "description": "Elevate your dining experience with this Table Runner by HomeDecor. Stylish and durable, it adds charm to any table setting."
     },
     {
         "id": 38,
@@ -308,7 +338,8 @@
         "category": "Home & Living",
         "brand": "LightUp",
         "price": 2499,
-        "image": "https://m.media-amazon.com/images/I/813jVpd4TqL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/813jVpd4TqL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Illuminate your home with this Floor Lamp by LightUp. Its sleek design and warm lighting create a cozy ambiance."
     },
     {
         "id": 39,
@@ -316,7 +347,8 @@
         "category": "Home & Living",
         "brand": "GardenPro",
         "price": 399,
-        "image": "https://m.media-amazon.com/images/I/71l-gZREP3L._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/71l-gZREP3L._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Display your plants in style with this Plant Pot by GardenPro. Durable and chic, it’s perfect for indoor or outdoor greenery."
     },
     {
         "id": 40,
@@ -324,6 +356,7 @@
         "category": "Home & Living",
         "brand": "ComfyHome",
         "price": 1799,
-        "image": "https://m.media-amazon.com/images/I/716yPyICExL._AC_UL480_FMwebp_QL65_.jpg"
+        "image": "https://m.media-amazon.com/images/I/716yPyICExL._AC_UL480_FMwebp_QL65_.jpg",
+        "description": "Transform your bedroom with this Bed Sheet Set by ComfyHome. Soft, breathable, and stylish for a restful night’s sleep."
     }
 ]

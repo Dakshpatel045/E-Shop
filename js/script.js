@@ -142,28 +142,69 @@ $(document).ready(function () {
 
     if (product) {
       $("#productDetails").html(`
-            <div class="col-md-6">
-                <div class="border rounded shadow-sm overflow-hidden" style="max-height: 450px; display: flex; align-items: center; justify-content: center;">
-                    <img src="${product.image}" alt="${product.name}" class="img-fluid" style="max-height: 100%; object-fit: contain;">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h1 class="fw-bold mb-2">${product.name}</h1>
-                <p class="text-muted mb-1">Brand: <strong>${product.brand}</strong></p>
-                <p class="fs-4 fw-semibold text-success mb-3">₹${product.price}</p>
-                <p class="mb-4">${product.description || "No description available for this product."}</p>
-                <div class="d-flex flex-column flex-sm-row gap-3">
-                    <button class="btn btn-lg btn-outline-dark mt-auto w-100 add-to-cart" data-id="${product.id}">
-                        <i class="bi bi-cart-plus me-2"></i>Add to Cart
-                    </button>
-                    <button class="btn btn-lg btn-outline-dark mt-auto w-100 add-to-wishlist" data-id="${product.id}">
-                        <i class="bi bi-heart me-2"></i>Add to Wishlist
-                    </button>
-                </div>
-            </div>
-        `);
+  <div class="col-12 mb-4">
+    <nav class="breadcrumb bg-white px-3 py-2 rounded shadow-sm">
+      <a href="index.html" class="breadcrumb-item text-decoration-none">Home</a>
+      <a href="products.html" class="breadcrumb-item text-decoration-none">Products</a>
+      <span class="breadcrumb-item active" aria-current="page">${
+        product.name
+      }</span>
+    </nav>
+  </div>
+
+  <div class="col-md-6">
+  <div class="product-card border rounded shadow-sm p-3 bg-white overflow-hidden text-center">
+  <div class="product-image-container">
+    <img src="${product.image}" alt="${product.name}" class="img-fluid product-image" />
+  </div>
+</div>
+
+</div>
+
+  <div class="col-md-6">
+    <div class="product-card border rounded shadow-sm p-4 bg-white h-100 d-flex flex-column justify-content-between">
+      <div>
+        <h2 class="fw-bold mb-2">${product.name}</h2>
+        
+        <div class="mb-2">
+          <span class="text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+            <i class="bi bi-star"></i>
+          </span>
+          <small class="text-muted">(128 reviews)</small>
+        </div>
+
+        <p class="text-body-secondary mb-2">Brand: <strong>${
+          product.brand
+        }</strong></p>
+        <span class="badge bg-success mb-3 px-3 py-2 fs-6">In Stock</span>
+        <h4 class="text-success fw-semibold mb-4">₹${product.price.toLocaleString()}</h4>
+        <p class="mb-4">${
+          product.description || "No description available for this product."
+        }</p>
+      </div>
+      <div class="d-flex flex-column flex-sm-row gap-3">
+        <button class="btn btn-outline-dark btn-lg w-100 add-to-cart" data-id="${
+          product.id
+        }">
+          <i class="bi bi-cart-plus me-2"></i>Add to Cart
+        </button>
+        <button class="btn btn-outline-dark btn-lg w-100 add-to-wishlist" data-id="${
+          product.id
+        }">
+          <i class="bi bi-heart me-2"></i>Add to Wishlist
+        </button>
+      </div>
+    </div>
+  </div>
+`);
     } else {
-      $("#productDetails").html('<p class="text-center">Product not found.</p>');
+      $("#productDetails").html(
+        '<p class="text-center">Product not found.</p>'
+      );
     }
   });
 
@@ -607,7 +648,10 @@ $(document).ready(function () {
         (u) => u.username === username && u.password === password
       );
       if (user) {
-        localStorage.setItem("loggedInUser", JSON.stringify({ username: user.username }));
+        localStorage.setItem(
+          "loggedInUser",
+          JSON.stringify({ username: user.username })
+        );
         Swal.fire({
           icon: "success",
           title: "Login Successful",
