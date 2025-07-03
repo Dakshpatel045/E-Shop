@@ -1,0 +1,329 @@
+[
+    
+    {
+        "id": 1,
+        "name": "Classic White T-Shirt",
+        "category": "Clothing",
+        "brand": "StyleCo",
+        "price": 499,
+        "image": "https://m.media-amazon.com/images/I/71xYN-j2a+L._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Blue Denim Jeans",
+        "category": "Clothing",
+        "brand": "DenimPro",
+        "price": 1199,
+        "image": "https://m.media-amazon.com/images/I/71OBVZ-69WL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Black Hoodie",
+        "category": "Clothing",
+        "brand": "UrbanWear",
+        "price": 899,
+        "image": "https://m.media-amazon.com/images/I/31c7bsjRNPL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Casual Shorts",
+        "category": "Clothing",
+        "brand": "StyleCo",
+        "price": 599,
+        "image": "https://m.media-amazon.com/images/I/61O5YPmdDxL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sports Jacket",
+        "category": "Clothing",
+        "brand": "ActiveGear",
+        "price": 1499,
+        "image": "https://m.media-amazon.com/images/I/51hXm8dIzAL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Formal Shirt",
+        "category": "Clothing",
+        "brand": "FormStyle",
+        "price": 799,
+        "image": "https://m.media-amazon.com/images/I/71VrpRdG7RL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Summer Dress",
+        "category": "Clothing",
+        "brand": "Femina",
+        "price": 1299,
+        "image": "https://m.media-amazon.com/images/I/61vlEZn-+dL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Jogger Pants",
+        "category": "Clothing",
+        "brand": "ActiveGear",
+        "price": 699,
+        "image": "https://m.media-amazon.com/images/I/618IpQhQLzL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Sweatshirt",
+        "category": "Clothing",
+        "brand": "UrbanWear",
+        "price": 899,
+        "image": "https://m.media-amazon.com/images/I/71J66iD28pL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Printed Skirt",
+        "category": "Clothing",
+        "brand": "Femina",
+        "price": 799,
+        "image": "https://m.media-amazon.com/images/I/61AGSN8Qd5L._AC_UL480_FMwebp_QL65_.jpg"
+    },
+
+    
+    {
+        "id": 11,
+        "name": "Leather Wallet",
+        "category": "Accessories",
+        "brand": "LeatherWorks",
+        "price": 499,
+        "image": "https://m.media-amazon.com/images/I/81rulhFGhxL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Analog Watch",
+        "category": "Accessories",
+        "brand": "TimeZone",
+        "price": 1499,
+        "image": "https://m.media-amazon.com/images/I/81CwsCvUWqL._AC_SR360,240_CB1169409_QL70_.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Sunglasses",
+        "category": "Accessories",
+        "brand": "ShadeUp",
+        "price": 799,
+        "image": "https://m.media-amazon.com/images/I/51gC4waUH0L._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Leather Belt",
+        "category": "Accessories",
+        "brand": "LeatherWorks",
+        "price": 599,
+        "image": "https://m.media-amazon.com/images/I/81jv56HsVOL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Canvas Backpack",
+        "category": "Accessories",
+        "brand": "BagPro",
+        "price": 1299,
+        "image": "https://m.media-amazon.com/images/I/51mos5Rz5KL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Baseball Cap",
+        "category": "Accessories",
+        "brand": "CapZone",
+        "price": 399,
+        "image": "https://m.media-amazon.com/images/I/51Ha9KMF1SL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Scarf",
+        "category": "Accessories",
+        "brand": "StyleCo",
+        "price": 299,
+        "image": "https://m.media-amazon.com/images/I/81CTW0fgawL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Silver Bracelet",
+        "category": "Accessories",
+        "brand": "Jewels",
+        "price": 999,
+        "image": "https://m.media-amazon.com/images/I/51tRDYCsmDL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Handbag",
+        "category": "Accessories",
+        "brand": "BagPro",
+        "price": 1599,
+        "image": "https://m.media-amazon.com/images/I/61-wXlQa5kL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Keychain Set",
+        "category": "Accessories",
+        "brand": "LeatherWorks",
+        "price": 199,
+        "image": "https://m.media-amazon.com/images/I/71rDlVSv8ML._AC_UL480_FMwebp_QL65_.jpg"
+    },
+
+   
+    {
+        "id": 21,
+        "name": "Smartphone",
+        "category": "Electronics",
+        "brand": "TechPro",
+        "price": 15999,
+        "image": "https://m.media-amazon.com/images/I/61D3EdXKG5L._SX679_.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Bluetooth Headphones",
+        "category": "Electronics",
+        "brand": "SoundX",
+        "price": 2999,
+        "image": "https://m.media-amazon.com/images/I/41lArSiD5hL._SX679_.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Laptop",
+        "category": "Electronics",
+        "brand": "CompTech",
+        "price": 49999,
+        "image": "https://m.media-amazon.com/images/I/71RDgtHsREL._SX679_.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Wireless Mouse",
+        "category": "Electronics",
+        "brand": "TechPro",
+        "price": 799,
+        "image": "https://m.media-amazon.com/images/I/31Hn3R2Vv5L._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Smartwatch",
+        "category": "Electronics",
+        "brand": "TimeZone",
+        "price": 5999,
+        "image": "https://m.media-amazon.com/images/I/41Y6lb1N2CL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Bluetooth Speaker",
+        "category": "Electronics",
+        "brand": "SoundX",
+        "price": 1999,
+        "image": "https://m.media-amazon.com/images/I/81Dl7qzd40L._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Tablet",
+        "category": "Electronics",
+        "brand": "CompTech",
+        "price": 14999,
+        "image": "https://m.media-amazon.com/images/I/61afkty1foL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 28,
+        "name": "USB Flash Drive",
+        "category": "Electronics",
+        "brand": "DataStore",
+        "price": 499,
+        "image": "https://m.media-amazon.com/images/I/51uBDIyAZlL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 29,
+        "name": "Power Bank",
+        "category": "Electronics",
+        "brand": "PowerMax",
+        "price": 1299,
+        "image": "https://m.media-amazon.com/images/I/717P0FVCmjL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 30,
+        "name": "Action Camera",
+        "category": "Electronics",
+        "brand": "CamPro",
+        "price": 8999,
+        "image": "https://m.media-amazon.com/images/I/51VGyKUgiaL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+
+   
+    {
+        "id": 31,
+        "name": "Decorative Vase",
+        "category": "Home & Living",
+        "brand": "HomeDecor",
+        "price": 799,
+        "image": "https://m.media-amazon.com/images/I/61Lt6ZEiQUL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 32,
+        "name": "Wall Clock",
+        "category": "Home & Living",
+        "brand": "HomeDecor",
+        "price": 999,
+        "image": "https://m.media-amazon.com/images/I/71F8TPyS4+L._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 33,
+        "name": "LED Table Lamp",
+        "category": "Home & Living",
+        "brand": "LightUp",
+        "price": 1499,
+        "image": "https://m.media-amazon.com/images/I/61ezlu8qUpL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 34,
+        "name": "Cushion Set",
+        "category": "Home & Living",
+        "brand": "ComfyHome",
+        "price": 1299,
+        "image": "https://m.media-amazon.com/images/I/61VB66+prEL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 35,
+        "name": "Kitchen Organizer",
+        "category": "Home & Living",
+        "brand": "OrganizePro",
+        "price": 699,
+        "image": "https://m.media-amazon.com/images/I/61Zge25u4TS._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 36,
+        "name": "Wall Art",
+        "category": "Home & Living",
+        "brand": "Artify",
+        "price": 1999,
+        "image": "https://m.media-amazon.com/images/I/71y-YvexhUL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 37,
+        "name": "Table Runner",
+        "category": "Home & Living",
+        "brand": "HomeDecor",
+        "price": 599,
+        "image": "https://m.media-amazon.com/images/I/81TDUF2Uc+L._SX679_.jpg"
+    },
+    {
+        "id": 38,
+        "name": "Floor Lamp",
+        "category": "Home & Living",
+        "brand": "LightUp",
+        "price": 2499,
+        "image": "https://m.media-amazon.com/images/I/813jVpd4TqL._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 39,
+        "name": "Plant Pot",
+        "category": "Home & Living",
+        "brand": "GardenPro",
+        "price": 399,
+        "image": "https://m.media-amazon.com/images/I/71l-gZREP3L._AC_UL480_FMwebp_QL65_.jpg"
+    },
+    {
+        "id": 40,
+        "name": "Bed Sheet Set",
+        "category": "Home & Living",
+        "brand": "ComfyHome",
+        "price": 1799,
+        "image": "https://m.media-amazon.com/images/I/716yPyICExL._AC_UL480_FMwebp_QL65_.jpg"
+    }
+]

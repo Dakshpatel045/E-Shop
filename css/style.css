@@ -1,0 +1,254 @@
+/* Responsive Footer Accordion */
+@media (max-width: 767.98px) {
+  #footerAccordion .accordion-body,
+  #footerAccordion ul,
+  #footerAccordion li,
+  #footerAccordion .footer-icon,
+  #footerAccordion .accordion-button {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Base Typography */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Branding */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Card Hover Effect */
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Footer Positioning */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Hero & Contact Section Background */
+.hero-section,
+.contact-section {
+  background-attachment: fixed;
+}
+
+/* Contact Form Styling */
+.contact-section .form-control {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Section Styling */
+.hero-section {
+  position: relative;
+  background: url('../images/hero-image1.jpg') center/cover no-repeat;
+  min-height: 450px;
+  background-attachment: fixed;
+  overflow: hidden;
+  border-radius: 0 !important;
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.hero-section .container {
+  z-index: 2;
+}
+
+.hero-section h1,
+.hero-section p {
+  color: #f8f9fa;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Newsletter Input & Button */
+footer .form-control-lg,
+footer .btn-lg {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Custom Button */
+.btn-custom {
+  background-color: white;
+  color: black;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-custom:hover {
+  background-color: #393E46;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Accordion Styling */
+.accordion-button {
+  background-color: #f8f9fa;
+  color: #000;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #e0e0e0;
+  color: #000;
+  box-shadow: none;
+}
+.accordion-button:hover {
+  background-color: #f0f0f0;
+}
+.accordion-item {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* Footer Links & Icons */
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-icon {
+  font-size: 1.2rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+.footer-icon:hover {
+  color: #fff;
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: #000;
+  border-radius: 0.5rem;
+  margin: 0 2px;
+}
+.pagination .page-item.active .page-link {
+  background-color: #343a40;
+  border-color: #343a40;
+  color: #fff;
+}
+#pagination .page-item {
+  margin: 0 4px;
+}
+#pagination .page-link {
+  border-radius: 0.5rem;
+}
+
+/* Video Cards */
+.recent-video-card,
+.all-video-card {
+  background-color: #e6f4ea;
+  border-radius: 0.5rem;
+}
+
+/* Card Title Links */
+.card-title a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+.card-title a:hover {
+  color: #000;
+}
+
+/* Carousel Controls */
+#teamCarousel .carousel-control-prev,
+#teamCarousel .carousel-control-next {
+  width: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+#teamCarousel .carousel-control-prev {
+  left: -2rem;
+}
+#teamCarousel .carousel-control-next {
+  right: -2rem;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: 60% 60%;
+}
+
+/* Horizontal Scroll for Team Cards */
+.team-scroll-container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.team-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.team-scroll-container .card {
+  scroll-snap-align: start;
+}
+
+/* Download Icon Button */
+.download-icon {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.download-icon i {
+  transition: color 0.3s ease;
+}
+.download-icon:hover {
+  background-color: #393E46;
+  color: white;
+  transform: translateY(-2px);
+}
+.download-icon:hover i {
+  color: white;
+}
+
+
+.card-img-top {
+    height: 220px; /* adjust as needed for consistency */
+    object-fit: cover;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
