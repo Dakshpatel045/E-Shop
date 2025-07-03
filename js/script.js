@@ -19,8 +19,7 @@ $(document).ready(function () {
     });
   });
 
-  //product page jquery starts
-
+  // Product page jQuery
   let products = [];
   let brands = new Set();
   let filteredProducts = [];
@@ -57,7 +56,6 @@ $(document).ready(function () {
       brands.add(product.brand);
     });
 
-    // Populate brand filter dynamically
     $("#brandFilter").empty().append('<option value="">All</option>');
     Array.from(brands)
       .sort()
@@ -86,7 +84,7 @@ $(document).ready(function () {
     $(".page-link").click(function (e) {
       e.preventDefault();
       currentPage = parseInt($(this).text());
-      displayProducts(filteredProducts); // re-filter and re-render
+      displayProducts(filteredProducts);
     });
   }
 
@@ -107,7 +105,7 @@ $(document).ready(function () {
       );
     });
 
-    currentPage = 1; // Reset only when filters change
+    currentPage = 1;
     displayProducts(filteredProducts);
   }
 
@@ -130,24 +128,20 @@ $(document).ready(function () {
     $("#maxPrice").val("");
     filterProducts();
   });
-  //product page jquery ends
 
-  // ✅ product-detail page jquery starts
-
-function isLoggedIn() {
+  // Product-detail page jQuery
+  function isLoggedIn() {
     return !!localStorage.getItem("loggedInUser");
-}
+  }
 
-// Get product ID from URL
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get("id");
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
 
-// Fetch and display product details
-$.getJSON("Data/products.json", function (products) {
+  $.getJSON("Data/products.json", function (products) {
     const product = products.find((p) => p.id == productId);
 
     if (product) {
-        $("#productDetails").html(`
+      $("#productDetails").html(`
             <div class="col-md-6">
                 <div class="border rounded shadow-sm overflow-hidden" style="max-height: 450px; display: flex; align-items: center; justify-content: center;">
                     <img src="${product.image}" alt="${product.name}" class="img-fluid" style="max-height: 100%; object-fit: contain;">
@@ -158,7 +152,6 @@ $.getJSON("Data/products.json", function (products) {
                 <p class="text-muted mb-1">Brand: <strong>${product.brand}</strong></p>
                 <p class="fs-4 fw-semibold text-success mb-3">₹${product.price}</p>
                 <p class="mb-4">${product.description || "No description available for this product."}</p>
-
                 <div class="d-flex flex-column flex-sm-row gap-3">
                     <button class="btn btn-lg btn-outline-dark mt-auto w-100 add-to-cart" data-id="${product.id}">
                         <i class="bi bi-cart-plus me-2"></i>Add to Cart
@@ -170,61 +163,95 @@ $.getJSON("Data/products.json", function (products) {
             </div>
         `);
     } else {
-        $("#productDetails").html('<p class="text-center">Product not found.</p>');
+      $("#productDetails").html('<p class="text-center">Product not found.</p>');
     }
-});
+  });
 
-// ✅ Add to Cart with login check
-$(document).on("click", ".add-to-cart", function () {
+  // Add to Cart with login check
+  $(document).on("click", ".add-to-cart", function () {
     if (!isLoggedIn()) {
-        alert("Please login to add products to your cart.");
-        window.location.href = "login.html";
-        return;
+      Swal.fire({
+        icon: "warning",
+        title: "Login Required",
+        text: "Please login to add products to your cart.",
+        confirmButtonText: "Go to Login",
+        showCancelButton: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "login.html";
+        }
+      });
+      return;
     }
 
     let id = parseInt($(this).data("id"));
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Ensure consistent object structure {id, qty}
-    if (!cart.some(item => item.id === id)) {
-        cart.push({ id: id, qty: 1 });
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("Product added to cart!");
+    if (!cart.some((item) => item.id === id)) {
+      cart.push({ id: id, qty: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      Swal.fire({
+        icon: "success",
+        title: "Added to Cart",
+        text: "Product added to cart!",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     } else {
-        alert("Product already in cart.");
+      Swal.fire({
+        icon: "info",
+        title: "Already in Cart",
+        text: "Product already in cart.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     }
-});
+  });
 
-// ✅ Add to Wishlist with login check
-$(document).on("click", ".add-to-wishlist", function () {
+  // Add to Wishlist with login check
+  $(document).on("click", ".add-to-wishlist", function () {
     if (!isLoggedIn()) {
-        alert("Please login to add products to your wishlist.");
-        window.location.href = "login.html";
-        return;
+      Swal.fire({
+        icon: "warning",
+        title: "Login Required",
+        text: "Please login to add products to your wishlist.",
+        confirmButtonText: "Go to Login",
+        showCancelButton: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "login.html";
+        }
+      });
+      return;
     }
 
     let id = parseInt($(this).data("id"));
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
     if (!wishlist.includes(id)) {
-        wishlist.push(id);
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        alert("Product added to wishlist!");
+      wishlist.push(id);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      Swal.fire({
+        icon: "success",
+        title: "Added to Wishlist",
+        text: "Product added to wishlist!",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     } else {
-        alert("Product already in wishlist.");
+      Swal.fire({
+        icon: "info",
+        title: "Already in Wishlist",
+        text: "Product already in wishlist.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     }
-});
+  });
 
-// ✅ product-detail page jquery ends
-
-
-
-
-  //Cart jquery starts
-
+  // Cart jQuery
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Convert old format (array of IDs) to new format (array of objects with qty)
   if (cart.length && typeof cart[0] === "number") {
     cart = cart.map((id) => ({ id, qty: 1 }));
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -278,11 +305,10 @@ $(document).on("click", ".add-to-wishlist", function () {
             <td>₹${item.price}</td>
             <td>
               <div class="d-flex align-items-center gap-1">
-  <button class="btn btn-outline-secondary btn-sm quantity-decrease px-2" type="button">−</button>
-  <input type="text" class="form-control form-control-sm text-center quantity-input" value="${item.qty}" readonly style="width: 45px;">
-  <button class="btn btn-outline-secondary btn-sm quantity-increase px-2" type="button">+</button>
-</div>
-
+                <button class="btn btn-outline-secondary btn-sm quantity-decrease px-2" type="button">−</button>
+                <input type="text" class="form-control form-control-sm text-center quantity-input" value="${item.qty}" readonly style="width: 45px;">
+                <button class="btn btn-outline-secondary btn-sm quantity-increase px-2" type="button">+</button>
+              </div>
             </td>
             <td class="fw-bold text-success subtotal">₹${subtotal}</td>
             <td>
@@ -310,7 +336,6 @@ $(document).on("click", ".add-to-wishlist", function () {
     });
   }
 
-  // Quantity Increase/Decrease
   $(document).on(
     "click",
     ".quantity-increase, .quantity-decrease",
@@ -328,11 +353,9 @@ $(document).on("click", ".add-to-wishlist", function () {
 
       input.val(qty);
 
-      // Update cart in localStorage
       cart = cart.map((item) => (item.id === id ? { ...item, qty } : item));
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      // Update subtotal and total
       const price = parseFloat(
         row.find("td:nth-child(2)").text().replace("₹", "")
       );
@@ -347,7 +370,6 @@ $(document).on("click", ".add-to-wishlist", function () {
     }
   );
 
-  // Remove Item
   $(document).on("click", ".remove-item", function () {
     const id = $(this).data("id");
     cart = cart.filter((item) => item.id !== id);
@@ -355,9 +377,7 @@ $(document).on("click", ".add-to-wishlist", function () {
     location.reload();
   });
 
-  // Cart jquery ends
-
-  // Wishlist jQuery Starts
+  // Wishlist jQuery
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   function loadWishlist() {
@@ -425,7 +445,6 @@ $(document).on("click", ".add-to-wishlist", function () {
   }
   loadWishlist();
 
-  // Remove from wishlist
   $(document).on("click", ".remove-from-wishlist", function () {
     let id = $(this).data("id");
     wishlist = wishlist.filter((itemId) => itemId !== id);
@@ -433,30 +452,37 @@ $(document).on("click", ".add-to-wishlist", function () {
     loadWishlist();
   });
 
-  // Add to cart from wishlist and remove from wishlist
   $(document).on("click", ".add-to-cart-from-wishlist", function () {
     let id = $(this).data("id");
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check if the product is already in cart by id
     if (!cart.some((item) => item.id === id)) {
       cart.push({ id: id, qty: 1 });
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      // Remove from wishlist
       wishlist = wishlist.filter((itemId) => itemId !== id);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
-      alert("Product added to cart and removed from wishlist.");
+      Swal.fire({
+        icon: "success",
+        title: "Moved to Cart",
+        text: "Product added to cart and removed from wishlist.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
       loadWishlist();
     } else {
-      alert("Product is already in the cart.");
+      Swal.fire({
+        icon: "info",
+        title: "Already in Cart",
+        text: "Product is already in the cart.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     }
   });
 
-  // Wishlist jQuery Ends
-
-  // Checkout logic starts here
+  // Checkout logic
   cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   if (cart.length === 0) {
@@ -540,20 +566,29 @@ $(document).on("click", ".add-to-wishlist", function () {
     ];
     for (let field of fields) {
       if ($(field).val().trim() === "") {
-        alert("Please fill all required fields.");
+        Swal.fire({
+          icon: "error",
+          title: "Missing Information",
+          text: "Please fill all required fields.",
+          confirmButtonText: "OK",
+        });
         return;
       }
     }
 
-    alert("✅ Order placed successfully!");
-    localStorage.removeItem("cart");
-    window.location.href = "index.html";
+    Swal.fire({
+      icon: "success",
+      title: "Order Placed",
+      text: "✅ Order placed successfully!",
+      timer: 1500,
+      showConfirmButton: false,
+    }).then(() => {
+      localStorage.removeItem("cart");
+      window.location.href = "index.html";
+    });
   });
 
-  // checkout ends
-
-  //login page jquery
-
+  // Login page jQuery
   $("#togglePassword").on("click", function () {
     const passwordField = $("#loginPassword");
     const type =
@@ -573,11 +608,23 @@ $(document).on("click", ".add-to-wishlist", function () {
       );
       if (user) {
         localStorage.setItem("loggedInUser", JSON.stringify({ username: user.username }));
-        alert("Login successful!");
-        updateNavbarLinks();
-        window.location.href = "index.html";
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+          text: "Welcome back!",
+          timer: 1500,
+          showConfirmButton: false,
+        }).then(() => {
+          updateNavbarLinks();
+          window.location.href = "index.html";
+        });
       } else {
-        alert("Invalid username or password.");
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid username or password.",
+          confirmButtonText: "OK",
+        });
       }
     });
   });
@@ -598,16 +645,33 @@ $(document).on("click", ".add-to-wishlist", function () {
     e.preventDefault();
     localStorage.removeItem("loggedInUser");
     updateNavbarLinks();
-    alert("Logged out successfully.");
-    window.location.href = "index.html";
+    Swal.fire({
+      icon: "success",
+      title: "Logged Out",
+      text: "Logged out successfully.",
+      timer: 1500,
+      showConfirmButton: false,
+    }).then(() => {
+      window.location.href = "index.html";
+    });
   });
+
   $(document).ready(function () {
     const restrictedPages = ["wishlist.html", "cart.html"];
     const currentPage = location.pathname.split("/").pop();
     const isLoggedIn = !!localStorage.getItem("loggedInUser");
     if (restrictedPages.includes(currentPage) && !isLoggedIn) {
-      alert("Please log in to access this page.");
-      window.location.href = "login.html";
+      Swal.fire({
+        icon: "warning",
+        title: "Login Required",
+        text: "Please log in to access this page.",
+        confirmButtonText: "Go to Login",
+        showCancelButton: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "login.html";
+        }
+      });
     }
   });
 });
