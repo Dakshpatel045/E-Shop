@@ -12,7 +12,7 @@
 
 /* Base Typography */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Navbar Branding */
@@ -42,10 +42,10 @@ footer {
 }
 
 /* Hero & Contact Section Background */
-.hero-section,
+/* .hero-section,
 .contact-section {
   background-attachment: fixed;
-}
+} */
 
 /* Contact Form Styling */
 .contact-section .form-control {
@@ -53,29 +53,29 @@ footer {
 }
 
 /* Hero Section Styling */
-.hero-section {
+/* .hero-section {
   position: relative;
   background: url('../images/hero-image1.jpg') center/cover no-repeat;
   min-height: 450px;
   background-attachment: fixed;
   overflow: hidden;
   border-radius: 0 !important;
-}
+} */
 
-.hero-overlay {
+/* .hero-overlay {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
   z-index: 1;
-}
+} */
 
-.hero-section .container {
+/* .hero-section .container {
   z-index: 2;
-}
+} */
 
-.hero-section h1,
+/* .hero-section h1,
 .hero-section p {
   color: #f8f9fa;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-}
+} */
 
 .text-shadow {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
@@ -140,6 +140,23 @@ footer .btn-lg {
 .footer-icon:hover {
   color: #fff;
 }
+
+.testimonial-scroll-container {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.testimonial-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-scroll-container .card {
+    scroll-snap-align: start;
+}
+
 
 /* Pagination */
 .pagination .page-link {
@@ -241,7 +258,7 @@ footer .btn-lg {
 
 .card-img-top {
     height: 220px; /* adjust as needed for consistency */
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .btn:hover {
@@ -250,7 +267,7 @@ footer .btn-lg {
 }
 
 .object-fit-cover {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .navbar-nav .nav-link {
@@ -299,18 +316,15 @@ footer .btn-lg {
 }
 
 .product-image-container {
-  max-height: 360px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
 }
 
 .product-image {
-  max-height: 100%;
   max-width: 100%;
-  object-fit: contain;
+  height: auto;
+  object-fit: contain; /* can be removed if not needed */
 }
 
 .product-card:hover {
@@ -331,7 +345,7 @@ footer .btn-lg {
 .team-photo {
   width: 100px;
   height: 100px;
-  object-fit: cover;
+  object-fit: contain;
   border: 3px solid #dee2e6;
   transition: border-color 0.3s ease;
 }
@@ -365,5 +379,196 @@ footer .btn-lg {
 .contact-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 1rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+.accordion-button::after {
+    filter: none; /* remove any invert filters */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.team-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+.team-scroll-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.team-scroll-container {
+    scroll-snap-type: x mandatory;
+}
+.team-scroll-container > .card {
+    scroll-snap-align: start;
+}
+
+/* Wishlist Table Button Styling */
+.wishlist-table .btn {
+  width: 100px; /* Fixed width for consistency */
+  padding: 0.5rem 0.75rem; /* Uniform padding */
+  font-size: 0.875rem; /* Consistent font size */
+  line-height: 1.5; /* Ensure consistent height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem; /* Space between icon and text */
+}
+
+/* Table Header Styling for Mobile */
+@media (max-width: 767.98px) {
+  .wishlist-table th {
+    padding: 0.5rem; /* Reduced padding for smaller header height */
+    font-size: 0.875rem; /* Smaller font size for headers */
+    line-height: 1.2; /* Tighter line height */
+  }
+  .wishlist-table .btn {
+    width: 90px; /* Slightly smaller width for mobile */
+    font-size: 0.75rem; /* Smaller font size for mobile */
+    padding: 0.4rem 0.6rem; /* Adjusted padding for mobile */
+  }
+}
+
+/* Ensure table responsiveness */
+.wishlist-table {
+  width: 100%;
+}
+
+/* Optional: Hover effect for buttons */
+.wishlist-table .btn-outline-dark:hover,
+.wishlist-table .btn-outline-danger:hover {
+  color: #fff;
+}
+
+
+/* Cart Table Button Styling */
+.cart-table .btn {
+  width: 100px; /* Fixed width for consistency (for Remove button) */
+  padding: 0.5rem 0.75rem; /* Uniform padding */
+  font-size: 0.875rem; /* Consistent font size */
+  line-height: 1.5; /* Ensure consistent height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem; /* Space between icon and text */
+}
+
+/* Quantity Buttons Styling */
+.cart-table .quantity-increase,
+.cart-table .quantity-decrease {
+  width: 30px; /* Smaller width for + and − buttons */
+  height: 30px; /* Fixed height for square shape */
+  padding: 0; /* Remove padding to keep buttons compact */
+  font-size: 0.75rem; /* Smaller font size for icons */
+  line-height: 1; /* Tight line height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quantity Input Styling */
+.cart-table .quantity-input {
+  width: 45px; /* Keep input width consistent */
+  padding: 0.25rem; /* Smaller padding for input */
+  font-size: 0.875rem; /* Consistent font size */
+}
+
+/* Proceed to Checkout Button Styling */
+.proceed-to-checkout {
+  padding: 0.5rem 1rem; /* Smaller padding than btn-lg */
+  font-size: 0.875rem; /* Smaller font size */
+  line-height: 1.5; /* Consistent line height */
+}
+
+/* Table Header and Button Styling for Mobile */
+@media (max-width: 767.98px) {
+  .cart-table th {
+    padding: 0.5rem; /* Reduced padding for smaller header height */
+    font-size: 0.875rem; /* Smaller font size for headers */
+    line-height: 1.2; /* Tighter line height */
+  }
+  .cart-table .btn {
+    width: 90px; /* Slightly smaller width for Remove button on mobile */
+    font-size: 0.75rem; /* Smaller font size for mobile */
+    padding: 0.4rem 0.6rem; /* Adjusted padding for mobile */
+  }
+  .cart-table .quantity-increase,
+  .cart-table .quantity-decrease {
+    width: 25px; /* Even smaller width for + and − buttons on mobile */
+    height: 25px; /* Smaller height for mobile */
+    font-size: 0.7rem; /* Smaller font size for icons */
+  }
+  .cart-table .quantity-input {
+    width: 40px; /* Slightly smaller input width on mobile */
+    font-size: 0.75rem; /* Smaller font size for mobile */
+  }
+  .proceed-to-checkout {
+    width: auto; /* Allow button to shrink */
+    padding: 0.4rem 0.75rem; /* Smaller padding for mobile */
+    font-size: 0.75rem; /* Smaller font size for mobile */
+  }
+}
+
+/* Ensure table responsiveness */
+.cart-table {
+  width: 100%;
+}
+
+/* Optional: Hover effect for buttons */
+.cart-table .btn-outline-dark:hover,
+.cart-table .btn-outline-danger:hover,
+.cart-table .quantity-increase:hover,
+.cart-table .quantity-decrease:hover {
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    filter: none !important; /* Remove any filter that might interfere */
+  }
+}
+
+.btn-hero {
+    background-color: white;
+    color: #212529;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #212529;
+    color: white;
+}
+
+.hero-section {
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 350px;
+    }
+}
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: 280px;
+    }
+}
+.hero-section h1 {
+    font-size: 2.5rem;
+}
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
 }
 

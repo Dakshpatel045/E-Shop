@@ -26,6 +26,7 @@ $(document).ready(function () {
   let currentPage = 1;
   const productsPerPage = 6;
 
+  // ✅ Display products without regenerating brand filter
   function displayProducts(data) {
     const start = (currentPage - 1) * productsPerPage;
     const end = start + productsPerPage;
@@ -53,19 +54,12 @@ $(document).ready(function () {
         </div>
       </div>
     `);
-      brands.add(product.brand);
     });
-
-    $("#brandFilter").empty().append('<option value="">All</option>');
-    Array.from(brands)
-      .sort()
-      .forEach((brand) => {
-        $("#brandFilter").append(`<option value="${brand}">${brand}</option>`);
-      });
 
     renderPagination(data.length);
   }
 
+  // ✅ Render pagination
   function renderPagination(totalItems) {
     const totalPages = Math.ceil(totalItems / productsPerPage);
     const pagination = $("#pagination");
@@ -88,6 +82,20 @@ $(document).ready(function () {
     });
   }
 
+  // ✅ Populate brand dropdown ONCE
+  function populateBrandFilter(data) {
+    brands.clear();
+    data.forEach((product) => brands.add(product.brand));
+
+    $("#brandFilter").empty().append('<option value="">All</option>');
+    Array.from(brands)
+      .sort()
+      .forEach((brand) => {
+        $("#brandFilter").append(`<option value="${brand}">${brand}</option>`);
+      });
+  }
+
+  // ✅ Filter products
   function filterProducts() {
     let search = $("#searchInput").val().toLowerCase();
     let category = $("#categoryFilter").val();
@@ -107,19 +115,33 @@ $(document).ready(function () {
 
     currentPage = 1;
     displayProducts(filteredProducts);
+
+    // ✅ For debugging:
+    console.log("Filter applied:", {
+      search,
+      category,
+      brand,
+      minPrice,
+      maxPrice,
+      filteredCount: filteredProducts.length,
+    });
   }
 
+  // ✅ Load data and initialize
   $.getJSON("Data/products.json", function (data) {
     products = data;
     filteredProducts = products;
+    populateBrandFilter(products);
     displayProducts(filteredProducts);
   });
 
+  // ✅ Bind filters
   $("#searchInput, #categoryFilter, #brandFilter, #minPrice, #maxPrice").on(
     "input change",
     filterProducts
   );
 
+  // ✅ Clear filters
   $("#clearFilters").click(function () {
     $("#searchInput").val("");
     $("#categoryFilter").val("");
@@ -155,7 +177,9 @@ $(document).ready(function () {
   <div class="col-md-6">
   <div class="product-card border rounded shadow-sm p-3 bg-white overflow-hidden text-center">
   <div class="product-image-container">
-    <img src="${product.image}" alt="${product.name}" class="img-fluid product-image" />
+    <img src="${product.image}" alt="${
+        product.name
+      }" class="img-fluid product-image" />
   </div>
 </div>
 
@@ -300,11 +324,11 @@ $(document).ready(function () {
 
   if (cart.length === 0) {
     $("#cartContainer").html(`
-      <div class="text-center py-5">
-        <i class="bi bi-cart-x fs-1 text-muted"></i>
-        <p class="mt-3 fs-5 text-muted">Your cart is empty.</p>
-      </div>
-    `);
+    <div class="text-center py-5">
+      <i class="bi bi-cart-x fs-1 text-muted"></i>
+      <p class="mt-3 fs-5 text-muted">Your cart is empty.</p>
+    </div>
+  `);
   } else {
     $.getJSON("Data/products.json", function (products) {
       let total = 0;
@@ -314,64 +338,64 @@ $(document).ready(function () {
       });
 
       let cartHTML = `
-        <div class="table-responsive">
-          <table class="table table-hover align-middle">
-            <thead class="table-light">
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-      `;
+      <div class="table-responsive">
+        <table class="table table-hover align-middle cart-table">
+          <thead class="table-light">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+    `;
 
       cartItems.forEach((item) => {
         const subtotal = item.price * item.qty;
         total += subtotal;
 
         cartHTML += `
-          <tr data-id="${item.id}">
-            <td>
-              <div class="d-flex align-items-center gap-3">
-                <img src="${item.image}" alt="${item.name}" width="60" height="60" class="rounded shadow-sm object-fit-cover" style="object-fit: cover;">
-                <div>
-                  <div class="fw-semibold">${item.name}</div>
-                  <div class="text-muted small">${item.brand}</div>
-                </div>
+        <tr data-id="${item.id}">
+          <td>
+            <div class="d-flex align-items-center gap-3">
+              <img src="${item.image}" alt="${item.name}" width="60" height="60" class="rounded shadow-sm object-fit-cover" style="object-fit: cover;">
+              <div>
+                <div class="fw-semibold">${item.name}</div>
+                <div class="text-muted small">${item.brand}</div>
               </div>
-            </td>
-            <td>₹${item.price}</td>
-            <td>
-              <div class="d-flex align-items-center gap-1">
-                <button class="btn btn-outline-secondary btn-sm quantity-decrease px-2" type="button">−</button>
-                <input type="text" class="form-control form-control-sm text-center quantity-input" value="${item.qty}" readonly style="width: 45px;">
-                <button class="btn btn-outline-secondary btn-sm quantity-increase px-2" type="button">+</button>
-              </div>
-            </td>
-            <td class="fw-bold text-success subtotal">₹${subtotal}</td>
-            <td>
-              <button class="btn btn-sm btn-outline-danger remove-item" data-id="${item.id}">
-                <i class="bi bi-trash me-1"></i> Remove
-              </button>
-            </td>
-          </tr>
-        `;
+            </div>
+          </td>
+          <td>₹${item.price}</td>
+          <td>
+            <div class="d-flex align-items-center gap-1">
+              <button class="btn btn-outline-dark btn-sm quantity-decrease px-2" type="button">−</button>
+              <input type="text" class="form-control form-control-sm text-center quantity-input" value="${item.qty}" readonly style="width: 45px;">
+              <button class="btn btn-outline-dark btn-sm quantity-increase px-2" type="button">+</button>
+            </div>
+          </td>
+          <td class="fw-bold text-success subtotal">₹${subtotal}</td>
+          <td>
+            <button class="btn btn-sm btn-outline-danger remove-item" data-id="${item.id}">
+              <i class="bi bi-trash me-1"></i> Remove
+            </button>
+          </td>
+        </tr>
+      `;
       });
 
       cartHTML += `
-            </tbody>
-          </table>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mt-4">
-          <div class="fw-bold fs-5">Total: ₹<span id="cartTotal">${total}</span></div>
-          <a href="checkout.html" class="btn btn-lg btn-outline-dark">
-            <i class="bi bi-credit-card me-2"></i>Proceed to Checkout
-          </a>
-        </div>
-      `;
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <div class="fw-bold fs-5">Total: ₹<span id="cartTotal">${total}</span></div>
+        <a href="checkout.html" class="btn btn-sm btn-outline-dark proceed-to-checkout">
+          <i class="bi bi-credit-card me-2"></i>Proceed to Checkout
+        </a>
+      </div>
+    `;
 
       $("#cartContainer").html(cartHTML);
     });
@@ -413,9 +437,32 @@ $(document).ready(function () {
 
   $(document).on("click", ".remove-item", function () {
     const id = $(this).data("id");
-    cart = cart.filter((item) => item.id !== id);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    location.reload();
+    Swal.fire({
+      title: "Remove Product?",
+      text: "Are you sure you want to remove this item from your cart?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#6c757d",
+      confirmButtonText: "Yes, remove it",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        cart = cart.filter((item) => item.id !== id);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        Swal.fire({
+          icon: "success",
+          title: "Removed!",
+          text: "Product has been removed from your cart.",
+          timer: 1200,
+          showConfirmButton: false,
+        });
+
+        setTimeout(() => {
+          location.reload();
+        }, 1300);
+      }
+    });
   });
 
   // Wishlist jQuery
@@ -436,7 +483,7 @@ $(document).ready(function () {
       let wishlistItems = products.filter((p) => wishlist.includes(p.id));
       let wishlistHTML = `
       <div class="table-responsive">
-        <table class="table table-hover align-middle">
+        <table class="table table-hover align-middle wishlist-table">
           <thead class="table-light">
             <tr>
               <th scope="col">Product</th>
@@ -488,9 +535,31 @@ $(document).ready(function () {
 
   $(document).on("click", ".remove-from-wishlist", function () {
     let id = $(this).data("id");
-    wishlist = wishlist.filter((itemId) => itemId !== id);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    loadWishlist();
+    Swal.fire({
+      title: "Remove Product?",
+      text: "Are you sure you want to remove this item from your wishlist?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#6c757d",
+      confirmButtonText: "Yes, remove it",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        wishlist = wishlist.filter((itemId) => itemId !== id);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        
+
+        Swal.fire({
+          icon: "success",
+          title: "Removed!",
+          text: "Product has been removed from your wishlist.",
+          timer: 1200,
+          showConfirmButton: false,
+        });
+
+        loadWishlist();
+      }
+    });
   });
 
   $(document).on("click", ".add-to-cart-from-wishlist", function () {
@@ -593,41 +662,41 @@ $(document).ready(function () {
     });
   }
 
-  $("#checkoutForm").submit(function (e) {
-    e.preventDefault();
+  // $("#checkoutForm").submit(function (e) {
+  //   e.preventDefault();
 
-    const fields = [
-      "#name",
-      "#email",
-      "#phone",
-      "#address",
-      "#city",
-      "#pincode",
-      "#state",
-    ];
-    for (let field of fields) {
-      if ($(field).val().trim() === "") {
-        Swal.fire({
-          icon: "error",
-          title: "Missing Information",
-          text: "Please fill all required fields.",
-          confirmButtonText: "OK",
-        });
-        return;
-      }
-    }
+  //   const fields = [
+  //     "#name",
+  //     "#email",
+  //     "#phone",
+  //     "#address",
+  //     "#city",
+  //     "#pincode",
+  //     "#state",
+  //   ];
+  //   for (let field of fields) {
+  //     if ($(field).val().trim() === "") {
+  //       Swal.fire({
+  //         icon: "error",
+  //         title: "Missing Information",
+  //         text: "Please fill all required fields.",
+  //         confirmButtonText: "OK",
+  //       });
+  //       return;
+  //     }
+  //   }
 
-    Swal.fire({
-      icon: "success",
-      title: "Order Placed",
-      text: "✅ Order placed successfully!",
-      timer: 1500,
-      showConfirmButton: false,
-    }).then(() => {
-      localStorage.removeItem("cart");
-      window.location.href = "index.html";
-    });
-  });
+  //   Swal.fire({
+  //     icon: "success",
+  //     title: "Order Placed",
+  //     text: "✅ Order placed successfully!",
+  //     timer: 1500,
+  //     showConfirmButton: false,
+  //   }).then(() => {
+  //     localStorage.removeItem("cart");
+  //     window.location.href = "index.html";
+  //   });
+  // });
 
   // Login page jQuery
   $("#togglePassword").on("click", function () {
@@ -683,7 +752,9 @@ $(document).ready(function () {
       $(".nav-login").removeClass("d-none");
     }
   }
+
   updateNavbarLinks();
+
 
   $("#logoutLink").on("click", function (e) {
     e.preventDefault();
@@ -715,6 +786,251 @@ $(document).ready(function () {
         if (result.isConfirmed) {
           window.location.href = "login.html";
         }
+      });
+    }
+  });
+
+  // team emember load
+
+  const teamMembers = [
+    {
+      name: "Team Member 1",
+      role: "Lead Instructor",
+      img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=400&fit=crop",
+    },
+    {
+      name: "Team Member 2",
+      role: "Content Strategist",
+      img: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=400&fit=crop",
+    },
+    {
+      name: "Team Member 3",
+      role: "Technical Specialist",
+      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&fit=crop",
+    },
+    {
+      name: "Team Member 4",
+      role: "UX Designer",
+      img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&fit=crop",
+    },
+    {
+      name: "Team Member 5",
+      role: "Marketing Lead",
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&fit=crop",
+    },
+    {
+      name: "Team Member 6",
+      role: "Backend Developer",
+      img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=400&fit=crop",
+    },
+  ];
+
+  const $container = $(".team-scroll-container");
+
+  $.each(teamMembers, function (i, member) {
+    const card = `
+      <div class="card border-0 text-center flex-shrink-0 shadow-sm" style="width: 250px;">
+        <img src="${member.img}" class="rounded-circle mx-auto mt-3 shadow-sm" alt="${member.name}" style="width: 150px; height: 150px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title mb-1">${member.name}</h5>
+          <small class="text-muted">${member.role}</small>
+        </div>
+      </div>
+    `;
+    $container.append(card);
+  });
+
+  // real time valition caontact us
+
+  function validateName() {
+    let name = $("#name").val().trim();
+    if (name.length < 3) {
+      $("#nameError").text("Name must be at least 3 characters.");
+      return false;
+    } else {
+      $("#nameError").text("");
+      return true;
+    }
+  }
+
+  function validateEmail() {
+    let email = $("#email").val().trim();
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      $("#emailError").text("Please enter a valid email address.");
+      return false;
+    } else {
+      $("#emailError").text("");
+      return true;
+    }
+  }
+
+  function validateMessage() {
+    let message = $("#message").val().trim();
+    if (message.length < 30) {
+      $("#messageError").text("Message must be at least 30 characters.");
+      return false;
+    } else {
+      $("#messageError").text("");
+      return true;
+    }
+  }
+
+  // Real-time validation
+  $("#name").on("input", validateName);
+  $("#email").on("input", validateEmail);
+  $("#message").on("input", validateMessage);
+
+  // On form submission
+  $("#contactForm").on("submit", function (e) {
+    e.preventDefault();
+
+    // Force validation on all fields so messages appear even if untouched
+    let isNameValid = validateName();
+    let isEmailValid = validateEmail();
+    let isMessageValid = validateMessage();
+
+    if (isNameValid && isEmailValid && isMessageValid) {
+      // Clear form
+      $("#contactForm")[0].reset();
+      $("#nameError, #emailError, #messageError").text("");
+
+      // SweetAlert success popup
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text: "Thank you for contacting us. We will get back to you shortly.",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    }
+  });
+
+  // validation for shipping
+  function validateShippingName() {
+    let name = $("#shippingName").val().trim();
+    if (name.length < 3) {
+      $("#shippingNameError").text("Name must be at least 3 characters.");
+      return false;
+    } else {
+      $("#shippingNameError").text("");
+      return true;
+    }
+  }
+
+  function validateShippingEmail() {
+    let email = $("#shippingEmail").val().trim();
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      $("#shippingEmailError").text("Please enter a valid email.");
+      return false;
+    } else {
+      $("#shippingEmailError").text("");
+      return true;
+    }
+  }
+
+  function validateShippingPhone() {
+    let phone = $("#shippingPhone").val().trim();
+    let phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+      $("#shippingPhoneError").text("Enter a valid 10-digit phone number.");
+      return false;
+    } else {
+      $("#shippingPhoneError").text("");
+      return true;
+    }
+  }
+
+  function validateShippingAddress() {
+    let address = $("#shippingAddress").val().trim();
+    if (address.length < 10) {
+      $("#shippingAddressError").text(
+        "Address must be at least 10 characters."
+      );
+      return false;
+    } else {
+      $("#shippingAddressError").text("");
+      return true;
+    }
+  }
+
+  function validateShippingCity() {
+    let city = $("#shippingCity").val().trim();
+    if (city.length < 2) {
+      $("#shippingCityError").text("Please enter a valid city.");
+      return false;
+    } else {
+      $("#shippingCityError").text("");
+      return true;
+    }
+  }
+
+  function validateShippingPincode() {
+    let pincode = $("#shippingPincode").val().trim();
+    let pincodePattern = /^[0-9]{6}$/;
+    if (!pincodePattern.test(pincode)) {
+      $("#shippingPincodeError").text("Enter a valid 6-digit pincode.");
+      return false;
+    } else {
+      $("#shippingPincodeError").text("");
+      return true;
+    }
+  }
+
+  function validateShippingState() {
+    let state = $("#shippingState").val().trim();
+    if (state.length < 2) {
+      $("#shippingStateError").text("Please enter a valid state.");
+      return false;
+    } else {
+      $("#shippingStateError").text("");
+      return true;
+    }
+  }
+
+  // ===== REAL-TIME VALIDATION =====
+
+  $("#shippingName").on("input", validateShippingName);
+  $("#shippingEmail").on("input", validateShippingEmail);
+  $("#shippingPhone").on("input", validateShippingPhone);
+  $("#shippingAddress").on("input", validateShippingAddress);
+  $("#shippingCity").on("input", validateShippingCity);
+  $("#shippingPincode").on("input", validateShippingPincode);
+  $("#shippingState").on("input", validateShippingState);
+
+  // ===== FORM SUBMISSION HANDLING =====
+
+  $("#checkoutForm").on("submit", function (e) {
+    e.preventDefault();
+
+    let isNameValid = validateShippingName();
+    let isEmailValid = validateShippingEmail();
+    let isPhoneValid = validateShippingPhone();
+    let isAddressValid = validateShippingAddress();
+    let isCityValid = validateShippingCity();
+    let isPincodeValid = validateShippingPincode();
+    let isStateValid = validateShippingState();
+
+    if (
+      isNameValid &&
+      isEmailValid &&
+      isPhoneValid &&
+      isAddressValid &&
+      isCityValid &&
+      isPincodeValid &&
+      isStateValid
+    ) {
+      // If all fields are valid:
+      Swal.fire({
+        icon: "success",
+        title: "Order Placed!",
+        text: "Your order has been placed successfully.",
+        timer: 1800,
+        showConfirmButton: false,
+      }).then(() => {
+        localStorage.removeItem("cart"); // Clear cart
+        window.location.href = "index.html"; // Redirect to home
       });
     }
   });

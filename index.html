@@ -26,33 +26,128 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-house-door me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">
+                                <i class="bi bi-grid me-1"></i> Products
+                            </a>
+                        </li>
+                        <li class="nav-item nav-wishlist d-none">
+                            <a class="nav-link" href="wishlist.html">
+                                <i class="bi bi-heart me-1"></i> Wishlist
+                            </a>
+                        </li>
+                        <li class="nav-item nav-cart d-none">
+                            <a class="nav-link" href="cart.html">
+                                <i class="bi bi-cart me-1"></i> Cart
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="bi bi-info-circle me-1"></i> About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <i class="bi bi-envelope me-1"></i> Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Login/Logout aligned right -->
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item "><a class="nav-link" href="products.html">Products</a></li>
-                        <li class="nav-item nav-wishlist d-none"><a class="nav-link" href="wishlist.html">Wishlist</a></li>
-                        <li class="nav-item nav-cart d-none"><a class="nav-link" href="cart.html">Cart</a></li>
-                        <li class="nav-item "><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item nav-login"><a class="nav-link" href="login.html">Login</a></li>
-                        <li class="nav-item nav-logout d-none"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+                        <li class="nav-item nav-login">
+                            <a class="nav-link" href="login.html">
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                            </a>
+                        </li>
+                        <li class="nav-item nav-logout d-none">
+                            <a class="nav-link" href="#" id="logoutLink">
+                                <i class="bi bi-box-arrow-right me-1"></i> Logout
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
 
     <!-- 🏠 Main Content -->
     <main>
 
-        <!-- 🔥 Hero Banner -->
-        <section class="hero-section d-flex align-items-center justify-content-center text-center">
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-            <div class="container position-relative">
-                <h1 class="display-4 fw-bold text-light">Discover the Latest Trends</h1>
-                <p class="lead text-light mb-4">Shop the best products at unbeatable prices</p>
-                <a href="products.html" class="btn btn-custom btn-lg rounded-pill">Shop Now</a>
+        <!-- 🔥 Hero Carousel -->
+        <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="hero-section d-flex align-items-center justify-content-center text-center position-relative"
+                        style="background: url('images/hero-image1.jpg') center/cover no-repeat; min-height: 500px;">
+                        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0,0,0,0.5);"></div>
+                        <div class="container position-relative text-light">
+                            <h1 class="display-4 fw-bold">Discover the Latest Trends</h1>
+                            <p class="lead mb-4">Shop the best products at unbeatable prices</p>
+                            <a href="products.html" class="btn btn-hero btn-lg rounded-pill">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="hero-section d-flex align-items-center justify-content-center text-center position-relative"
+                        style="background: url('https://images.unsplash.com/photo-1540221652346-e5dd6b50f3e7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhlc3xlbnwwfHwwfHx8MA%3D%3D') center/cover no-repeat; min-height: 500px;">
+                        <!-- ✅ Corrected overlay -->
+                        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0,0,0,0.5);"></div>
+                        <div class="container position-relative text-light">
+                            <h1 class="display-4 fw-bold">Exclusive Seasonal Collection</h1>
+                            <p class="lead mb-4">Trendy arrivals to elevate your style</p>
+                            <a href="products.html" class="btn btn-hero btn-lg rounded-pill">Explore Collection</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="hero-section d-flex align-items-center justify-content-center text-center position-relative"
+                        style="background: url('https://template.canva.com/EAE2eHlKTiQ/2/0/1600w-Jzq89nYBDMg.jpg') center/cover no-repeat; min-height: 500px;">
+                        <!-- ✅ Corrected overlay -->
+                        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+                            style="background: rgba(0,0,0,0.5);"></div>
+                        <div class="container position-relative text-light">
+                            <h1 class="display-4 fw-bold">Unbeatable Prices</h1>
+                            <p class="lead mb-4">Find top deals on your favorite products</p>
+                            <a href="products.html" class="btn btn-hero btn-lg rounded-pill">Grab Deals</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Carousel controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Carousel indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
         </section>
+
+
 
         <!-- 🛍️ Featured Products -->
         <section class="container my-5">
@@ -101,33 +196,48 @@
         <!-- 💬 Testimonials -->
         <section class="container my-5">
             <h2 class="text-center mb-4 fw-bold">What Our Customers Say</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card p-3 h-100">
-                        <blockquote class="blockquote mb-0">
-                            <p>"Great quality products and fast delivery. Highly recommend E-Shop!"</p>
-                            <footer class="blockquote-footer mt-2">Rahul, Mumbai</footer>
-                        </blockquote>
-                    </div>
+
+            <div class="testimonial-scroll-container d-flex overflow-auto gap-3 px-3">
+                <div class="card p-3 flex-shrink-0 shadow-sm" style="width: 280px;">
+                    <blockquote class="blockquote mb-0">
+                        <p>"Great quality products and fast delivery. Highly recommend E-Shop!"</p>
+                        <footer class="blockquote-footer mt-2">Rahul, Mumbai</footer>
+                    </blockquote>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 h-100">
-                        <blockquote class="blockquote mb-0">
-                            <p>"Amazing customer service and unbeatable prices. Loved the experience!"</p>
-                            <footer class="blockquote-footer mt-2">Sneha, Delhi</footer>
-                        </blockquote>
-                    </div>
+                <div class="card p-3 flex-shrink-0 shadow-sm" style="width: 280px;">
+                    <blockquote class="blockquote mb-0">
+                        <p>"Amazing customer service and unbeatable prices. Loved the experience!"</p>
+                        <footer class="blockquote-footer mt-2">Sneha, Delhi</footer>
+                    </blockquote>
                 </div>
-                <div class="col-md-4">
-                    <div class="card p-3 h-100">
-                        <blockquote class="blockquote mb-0">
-                            <p>"Easy checkout process with fast COD delivery. Will shop again!"</p>
-                            <footer class="blockquote-footer mt-2">Amit, Bangalore</footer>
-                        </blockquote>
-                    </div>
+                <div class="card p-3 flex-shrink-0 shadow-sm" style="width: 280px;">
+                    <blockquote class="blockquote mb-0">
+                        <p>"Easy checkout process with fast COD delivery. Will shop again!"</p>
+                        <footer class="blockquote-footer mt-2">Amit, Bangalore</footer>
+                    </blockquote>
+                </div>
+                <div class="card p-3 flex-shrink-0 shadow-sm" style="width: 280px;">
+                    <blockquote class="blockquote mb-0">
+                        <p>"Excellent packaging and prompt updates. Very happy with the purchase."</p>
+                        <footer class="blockquote-footer mt-2">Priya, Pune</footer>
+                    </blockquote>
+                </div>
+                <div class="card p-3 flex-shrink-0 shadow-sm" style="width: 280px;">
+                    <blockquote class="blockquote mb-0">
+                        <p>"Great discounts during sale! Product quality exceeded expectations."</p>
+                        <footer class="blockquote-footer mt-2">Karan, Hyderabad</footer>
+                    </blockquote>
+                </div>
+                <div class="card p-3 flex-shrink-0 shadow-sm" style="width: 280px;">
+                    <blockquote class="blockquote mb-0">
+                        <p>"User-friendly website and secure checkout. Happy customer!"</p>
+                        <footer class="blockquote-footer mt-2">Anjali, Ahmedabad</footer>
+                    </blockquote>
                 </div>
             </div>
         </section>
+
+
 
         <!-- 📢 Promo Strip -->
         <section class="bg-success text-light text-center py-3">
