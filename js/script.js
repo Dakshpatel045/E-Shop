@@ -255,6 +255,7 @@ $(document).ready(function () {
     if (!cart.some((item) => item.id === id)) {
       cart.push({ id: id, qty: 1 });
       localStorage.setItem("cart", JSON.stringify(cart));
+      updateNavBadges();
       Swal.fire({
         icon: "success",
         title: "Added to Cart",
@@ -296,6 +297,7 @@ $(document).ready(function () {
     if (!wishlist.includes(id)) {
       wishlist.push(id);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      updateNavBadges();
       Swal.fire({
         icon: "success",
         title: "Added to Wishlist",
@@ -449,7 +451,7 @@ $(document).ready(function () {
       if (result.isConfirmed) {
         cart = cart.filter((item) => item.id !== id);
         localStorage.setItem("cart", JSON.stringify(cart));
-
+        updateNavBadges();
         Swal.fire({
           icon: "success",
           title: "Removed!",
@@ -547,7 +549,7 @@ $(document).ready(function () {
       if (result.isConfirmed) {
         wishlist = wishlist.filter((itemId) => itemId !== id);
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        
+        updateNavBadges();
 
         Swal.fire({
           icon: "success",
@@ -572,7 +574,7 @@ $(document).ready(function () {
 
       wishlist = wishlist.filter((itemId) => itemId !== id);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
+      updateNavBadges();
       Swal.fire({
         icon: "success",
         title: "Moved to Cart",
@@ -754,6 +756,7 @@ $(document).ready(function () {
   }
 
   updateNavbarLinks();
+  updateNavBadges();
 
 
   $("#logoutLink").on("click", function (e) {
@@ -1030,8 +1033,33 @@ $(document).ready(function () {
         showConfirmButton: false,
       }).then(() => {
         localStorage.removeItem("cart"); // Clear cart
+        updateNavBadges();
         window.location.href = "index.html"; // Redirect to home
       });
     }
   });
 });
+
+function updateNavBadges() {
+  // Get cart and wishlist from localStorage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  // Update cart badge
+  let cartCount = cart.length;
+  $("#cartBadge").text(cartCount);
+  if (cartCount > 0) {
+    $("#cartBadge").removeClass("d-none");
+  } else {
+    $("#cartBadge").addClass("d-none");
+  }
+
+  // Update wishlist badge
+  let wishlistCount = wishlist.length;
+  $("#wishlistBadge").text(wishlistCount);
+  if (wishlistCount > 0) {
+    $("#wishlistBadge").removeClass("d-none");
+  } else {
+    $("#wishlistBadge").addClass("d-none");
+  }
+}
