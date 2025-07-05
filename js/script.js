@@ -274,7 +274,6 @@ $(document).ready(function () {
     }
   });
 
-  // Add to Wishlist with login check
   $(document).on("click", ".add-to-wishlist", function () {
     if (!isLoggedIn()) {
       Swal.fire({
@@ -293,7 +292,21 @@ $(document).ready(function () {
 
     let id = parseInt($(this).data("id"));
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    // Check if product is in cart
+    if (cart.some((item) => item.id === id)) {
+      Swal.fire({
+        icon: "error",
+        title: "Cannot Add to Wishlist",
+        text: "This product is already in your cart.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      return;
+    }
+
+    // If not in cart, proceed with wishlist addition
     if (!wishlist.includes(id)) {
       wishlist.push(id);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
@@ -315,7 +328,6 @@ $(document).ready(function () {
       });
     }
   });
-
   // Cart jQuery
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -758,12 +770,11 @@ $(document).ready(function () {
   updateNavbarLinks();
   updateNavBadges();
 
-
   $("#logoutLink").on("click", function (e) {
     e.preventDefault();
     localStorage.removeItem("loggedInUser");
     updateNavbarLinks();
-    $('.offcanvas').offcanvas('hide'); 
+    $(".offcanvas").offcanvas("hide");
     Swal.fire({
       icon: "success",
       title: "Logged Out",
