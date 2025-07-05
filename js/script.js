@@ -763,6 +763,7 @@ $(document).ready(function () {
     e.preventDefault();
     localStorage.removeItem("loggedInUser");
     updateNavbarLinks();
+    $('.offcanvas').offcanvas('hide'); 
     Swal.fire({
       icon: "success",
       title: "Logged Out",

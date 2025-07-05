@@ -577,3 +577,54 @@ footer .btn-lg {
   padding: 0.25em 0.5em;
   vertical-align: middle;
 }
+
+@media (max-width: 767.98px) {
+    #filterSection {
+        order: -1; /* Ensure filters appear above products on mobile */
+    }
+}
+
+.border.shadow-sm.bg-white:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Input and select hover */
+#filterSection .form-control:hover,
+#filterSection .form-select:hover {
+    border-color: #6c757d;
+    box-shadow: 0 0 0 0.15rem rgba(108, 117, 125, 0.25);
+    transition: all 0.2s ease;
+}
+
+/* Clear button hover */
+#clearFilters:hover {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom offcanvas styling */
+@media (max-width: 991px) {
+    .offcanvas {
+        width: 280px; /* Adjust width for mobile */
+    }
+    .offcanvas-body {
+        padding: 1rem;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 1.1rem;
+    }
+    .navbar-nav .badge {
+        font-size: 0.7rem;
+        vertical-align: middle;
+    }
+}
+
+
+
+
+
+
