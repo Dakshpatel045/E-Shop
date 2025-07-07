@@ -338,6 +338,7 @@ $(document).ready(function () {
 
   if (cart.length === 0) {
     $("#cartContainer").html(`
+      
     <div class="text-center py-5">
       <i class="bi bi-cart-x fs-1 text-muted"></i>
       <p class="mt-3 fs-5 text-muted">Your cart is empty.</p>
@@ -410,7 +411,6 @@ $(document).ready(function () {
         </a>
       </div>
     `;
-
       $("#cartContainer").html(cartHTML);
     });
   }
